@@ -9,6 +9,8 @@ public class NewsItem {
 
     private Integer NewsPublishTime;
 
+    private String title;
+
     public String getNewsItem_id() {
         return newsitem_id;
     }
@@ -29,7 +31,11 @@ public class NewsItem {
         return NewsPublishTime;
     }
 
-    public void setNewsPublishTime(Integer publishTime) {
-        NewsPublishTime = publishTime;
+    public void setNewsPublishTime(Integer publish_time) {
+        NewsPublishTime = publish_time;
     }
+
+    public String getTitle(){return title;}
+
+    public void setTitle(String title){this.title = title;}
 }

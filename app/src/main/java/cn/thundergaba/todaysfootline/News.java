@@ -1,7 +1,7 @@
 package cn.thundergaba.todaysfootline;
 
 public class News extends NewsItem {
-    private String play_url;
+//    private String play_url;
 
     private boolean is_liked;//是否被当前用户点赞
 
@@ -15,13 +15,13 @@ public class News extends NewsItem {
         this.cover_url = cover_url;
     }
 
-    public String getPlay_url() {
-        return play_url;
-    }
-
-    public void setPlay_url(String play_url) {
-        this.play_url = play_url;
-    }
+//    public String getPlay_url() {
+//        return play_url;
+//    }
+//
+//    public void setPlay_url(String play_url) {
+//        this.play_url = play_url;
+//    }
 
     public boolean isIs_liked() {
         return is_liked;

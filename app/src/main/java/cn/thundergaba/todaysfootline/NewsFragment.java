@@ -215,7 +215,8 @@ public class NewsFragment extends Fragment {
             // TODO user avatar is not correctly loaded
             holder.avatar.setImageURI(Uri.parse(list.get(position).getNewsUserInfo().getAvatar_url()));
             holder.user.setText(list.get(position).getNewsUserInfo().getName());
-            holder.news.setText(list.get(position).getNewsUserInfo().getName());
+            holder.news.setText(list.get(position).getTitle());
+            //holder.time.setText(list.get(position).getNewsPublishTime());
             //TODO video not played
             //TODO get the thumbnail of each video
             // Bitmap map = new Bitmap();
@@ -232,11 +233,13 @@ public class NewsFragment extends Fragment {
             ImageView avatar;
             TextView user;
             TextView news;
+            TextView time;
             public NewsViewholder(@NonNull View itemView) {
                 super(itemView);
                 avatar = itemView.findViewById(R.id.news_image);
                 user = itemView.findViewById(R.id.news_source);
                 news = itemView.findViewById(R.id.news_title);
+                //time = itemView.findViewById(R.id.news_time);
             }
         }
 

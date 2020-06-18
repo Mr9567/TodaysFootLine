@@ -12,7 +12,7 @@ public class NewsJsonConversion {
     public static News GetNewsFromJson(String TAG, JSONObject object){
 
         try {
-            if(object.has("user_info") ){
+            if(object.has("user_info") && object.has("title" ) && object.has("publish_time")){
                 JSONObject user_object = object.getJSONObject("user_info");
                 NewsUserInfo newsUserInfo = new NewsUserInfo(user_object.getString("name")
                         ,user_object.getString("avatar_url"));
@@ -21,14 +21,16 @@ public class NewsJsonConversion {
 //                        .getString("main_url");
 //                String main_url_decoded = new String(Base64.decode(main_url_encoded, Base64.DEFAULT));
 //                Log.d(TAG,"DECODED URL:" + main_url_decoded);
-                String item_id = new JSONObject(object.getString("pread_params")).getString("item_id");
-                Integer publish_date = new Integer(object.getInt("publish_time"));
+                String title = new String(object.getString("title"));
+                String item_id = new String(object.getString("item_id"));
+                Integer publish_time = new Integer(object.getInt("publish_time"));
                 News result = new News();
+                result.setTitle(title);
                 result.setIs_liked(false);
                 result.setNewsUserInfo(newsUserInfo);
 //                result.setPlay_url(main_url_decoded);
                 result.setNewsItem_id(item_id);
-                result.setNewsPublishTime(publish_date);
+                result.setNewsPublishTime(publish_time);
                 return result;
             }
             else{
